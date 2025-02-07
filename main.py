@@ -6,7 +6,7 @@ import smtplib
 
 # read
 data = pandas.read_csv("birthdays.csv")
-dict = data.to_dict(orient='records')
+dict_ = data.to_dict(orient='records')
 # for i in dict:
 #     if i['email'] == 'test1234@email.com':
 #         print(i)
@@ -16,7 +16,7 @@ now = dt.datetime.now()
 yr = now.year
 month = now.month
 day = now.day
-for i in dict:
+for i in dict_:
     if i['year'] == yr and i['month'] == month and i['day'] == day:
         with open(f"letter_templates/letter_{random.randint(1, 3)}.txt") as letter:
             mail = letter.read()
